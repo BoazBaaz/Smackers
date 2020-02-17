@@ -63,7 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resouces\Sprites\CameraScreen.cs" />
+    <Compile Include="Assets\Resouces\Scrips\Billboard.cs" />
+    <Compile Include="Assets\Resouces\Scrips\CameraScreen.cs" />
+    <Compile Include="Assets\Resouces\Scrips\Player1_Movement.cs" />
+    <Compile Include="Assets\Resouces\Scrips\Player2_Movement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

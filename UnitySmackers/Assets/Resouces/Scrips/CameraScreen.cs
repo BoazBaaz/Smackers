@@ -29,6 +29,6 @@ public class CameraScreen : MonoBehaviour
 
         cam.transform.position = Vector3.Slerp(cam.transform.position, cameraDestination, followTimeDelta);
 
-        transform.RotateAround(midpoint, new Vector3(0f, rotationSpeed * Time.deltaTime, 0f), 1f);
+        transform.RotateAround(midpoint, new Vector3(0f, 1f, 0f), 0.1f * rotationSpeed * Time.deltaTime);
     }
 }

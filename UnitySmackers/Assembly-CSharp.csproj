@@ -66,6 +66,7 @@
     <Compile Include="Assets\Resouces\Scrips\Billboard.cs" />
     <Compile Include="Assets\Resouces\Scrips\CameraScreen.cs" />
     <Compile Include="Assets\Resouces\Scrips\PlayerMovement.cs" />
+    <Compile Include="Assets\Resouces\Scrips\SceneSwitch.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

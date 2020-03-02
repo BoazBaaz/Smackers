@@ -10,8 +10,13 @@ public class SceneSwitch : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetScene(int sceneInput)
+    public void LoadScene(int scene)
     {
-        SceneManager.LoadScene(sceneInput);
+        SceneManager.LoadScene(scene);
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

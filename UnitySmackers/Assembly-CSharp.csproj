@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Resouces\Scrips\Billboard.cs" />
     <Compile Include="Assets\Resouces\Scrips\CameraScreen.cs" />
+    <Compile Include="Assets\Resouces\Scrips\Health.cs" />
     <Compile Include="Assets\Resouces\Scrips\PlayerMovement.cs" />
     <Compile Include="Assets\Resouces\Scrips\SceneSwitch.cs" />
     <Reference Include="Unity.Timeline.Editor">

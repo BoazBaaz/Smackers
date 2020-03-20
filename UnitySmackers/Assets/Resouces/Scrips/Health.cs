@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
         if (RaycastEnemy())
             Hit();
 
-        if (currentHealth > 0)
+        if (currentHealth > 0 && Input.GetKeyDown(KeyCode.Space))
             EndMatch();
     }
 
@@ -69,7 +69,7 @@ public class Health : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        text.text = gameObject.name + " won.";
+        text.text = targetRigidbody.name + " won.";
         canvas.enabled = true;
     }
 }

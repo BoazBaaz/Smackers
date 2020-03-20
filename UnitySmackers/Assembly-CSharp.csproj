@@ -110,6 +110,21 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+      <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+      <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
+      <HintPath>C:/Users/BoasB/Game Developer/Jaar 1/Periode 3/Smackers/UnitySmackers/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>

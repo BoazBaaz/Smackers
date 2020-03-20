@@ -8,8 +8,6 @@ public class CameraScreen : MonoBehaviour
     public Transform pl2;
     private Camera cam;
 
-    public GameObject OppositeCamera;
-
     //public float rotationSpeed;
 
     public float zoomFactor = 1.5f;
@@ -30,8 +28,6 @@ public class CameraScreen : MonoBehaviour
         Vector3 cameraDestination = midpoint - cam.transform.forward * distance * zoomFactor;
 
         Vector3 midpointForward = midpoint - cam.transform.position;
-
-        OppositeCamera.transform.position = midpointForward;
 
         cam.transform.position = Vector3.Slerp(cam.transform.position, cameraDestination, followTimeDelta);
 

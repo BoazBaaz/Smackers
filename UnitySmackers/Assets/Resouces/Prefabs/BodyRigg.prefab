@@ -63,7 +63,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &505897336775190549
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!144 &863584924514436313
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_MaxHealth: 100
   m_CurrentHealth: 0
   m_Damage: 10
+  playerDied: 0
 --- !u!1 &895907668140226879
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +426,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &3829613555477416368
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -534,7 +535,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &4011789526804465931
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -591,6 +592,8 @@ GameObject:
   - component: {fileID: 1020909760258464677}
   - component: {fileID: 1677987742944745756}
   - component: {fileID: 1525810136551727544}
+  - component: {fileID: 761529798491459490}
+  - component: {fileID: 1710673479512698716}
   m_Layer: 0
   m_Name: BodyRigg
   m_TagString: Untagged
@@ -629,6 +632,7 @@ MonoBehaviour:
   m_MaxHealth: 100
   m_CurrentHealth: 0
   m_Damage: 10
+  playerDied: 0
 --- !u!114 &1525810136551727544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,6 +646,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  smoothSpeed: 1
+  vectorInput: {x: 0, y: 0, z: 0}
+  rb: {fileID: 3829613555477416369}
+--- !u!114 &761529798491459490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066849266964474294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cb2cc6b91b28f4fa405ebbca79b5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1710673479512698716}
+--- !u!95 &1710673479512698716
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066849266964474294}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f2a95fe6bff6c8438a3296c89a3dded, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4287606043397549024
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +743,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!1 &5647465903010155966
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +807,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &5647465903010155964
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -907,7 +946,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &7477139876401746463
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1018,7 +1057,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &7623549002139668879
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1127,7 +1166,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &7867451008758438605
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1327,7 +1366,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!144 &8834147784070860948
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1388,6 +1427,7 @@ MonoBehaviour:
   m_MaxHealth: 100
   m_CurrentHealth: 0
   m_Damage: 10
+  playerDied: 0
 --- !u!1 &9006728136757513169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,7 +1491,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!144 &9006728136757513175
 CharacterJoint:
   m_ObjectHideFlags: 0

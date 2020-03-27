@@ -12,6 +12,7 @@ public class Startmenu : MonoBehaviour
     {
         startMenuUI.SetActive(false);
         GameStart = false;
+        Time.timeScale = 1f;
         Debug.Log("button is ingedrukt");
 
     }

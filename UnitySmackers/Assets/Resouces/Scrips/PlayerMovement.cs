@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 20;
+    public float moveSpeed = 20f;
+    public float smoothSpeed = 1f;
 
-    private Vector3 vectorInput;
+    public Vector3 vectorInput;
+    public Vector3 lastMovement;
 
     private void Update()
     {
@@ -24,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += ((vectorInput * moveSpeed) * Time.fixedDeltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lastMovement), smoothSpeed);
+
+        transform.Translate(vectorInput * moveSpeed * Time.deltaTime, Space.World);
     }
 }

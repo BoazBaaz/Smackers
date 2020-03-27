@@ -8,29 +8,46 @@ public class CameraScreen : MonoBehaviour
     public Transform pl2;
     private Camera cam;
 
-    //public float rotationSpeed;
+    public Canvas canves;
+    private Startmenu startMenu;
+
+    public Vector3 camStartPos;
+    private Quaternion camStartRoto;
+
+    public float cameraRotationSpeed = 10;
 
     public float zoomFactor = 1.5f;
     public float followTimeDelta = 0.8f;
 
     void Start()
     {
+        camStartPos = transform.position;
+        camStartRoto = transform.rotation;
+
         cam = gameObject.GetComponent<Camera>();
+        startMenu = canves.GetComponentInChildren<Startmenu>();
     }
 
     private void FixedUpdate()
     {
+        if (startMenu.inTitleScreen != true)
+        {
+            transform.position = camStartPos;
+            transform.rotation = camStartRoto;
 
-        Vector3 midpoint = (pl1.position + pl2.position) / 2f;
+            Vector3 midpoint = (pl1.position + pl2.position) / 2f;
 
-        float distance = (pl1.position - pl2.position).magnitude;
+            float distance = (pl1.position - pl2.position).magnitude;
 
-        Vector3 cameraDestination = midpoint - cam.transform.forward * distance * zoomFactor;
+            Vector3 cameraDestination = midpoint - cam.transform.forward * distance * zoomFactor;
 
-        Vector3 midpointForward = midpoint - cam.transform.position;
+            cam.transform.position = Vector3.Slerp(transform.position, cameraDestination, followTimeDelta);
+        }
+        else
+        {
+            transform.RotateAround(Vector3.zero, Vector3.up, cameraRotationSpeed * Time.deltaTime);
 
-        cam.transform.position = Vector3.Slerp(cam.transform.position, cameraDestination, followTimeDelta);
-
-        //transform.RotateAround(midpoint, new Vector3(0f, 1f, 0f), 0.1f * rotationSpeed * Time.deltaTime);
+            transform.LookAt(Vector3.zero);
+        }
     }
 }

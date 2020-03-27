@@ -4,35 +4,77 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    private Rigidbody[] playerRBS;
     public Animator anim;
 
-    private Health healthScript;
-    private PlayerMovement playerMovementScript;
+    protected Health healthScript;
+    protected PlayerMovement playerMovementScript;
 
     private void Start()
     {
         healthScript = gameObject.GetComponent<Health>();
         playerMovementScript = gameObject.GetComponent<PlayerMovement>();
 
-
-        playerRBS = gameObject.GetComponentsInChildren<Rigidbody>();
-
-        for (int i = 0; i < playerRBS.Length; i++)
-        {
-            playerRBS[i].isKinematic = true;
-        }
+        SetRigidbodyState(true);
+        SetColliderState(false);
     }
 
     private void Update()
     {
-        if (healthScript.playerDied == true)
+        AnimatorSwitches();
+    }
+
+    public void Die()
+    {
+        anim.enabled = false;
+        SetRigidbodyState(false);
+        SetColliderState(true);
+    }
+
+    public void SetRigidbodyState(bool state)
+    {
+        Rigidbody[] rigidbodys = gameObject.GetComponentsInChildren<Rigidbody>();
+
+        foreach (Rigidbody rigidbody in rigidbodys)
+        {
+            rigidbody.isKinematic = state;
+        }
+
+        GetComponent<Rigidbody>().isKinematic = !state;
+    }
+
+    public void SetColliderState(bool state)
+    {
+        Collider[] colliders = gameObject.GetComponentsInChildren<Collider>();
+
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = state;
+        }
+
+        Collider[] colliderOnObject = gameObject.GetComponents<Collider>();
+
+        foreach (Collider collider in colliderOnObject)
+        {
+            collider.enabled = !state;
+        }
+    }
+
+    private void AnimatorSwitches()
+    {
+        if (healthScript.playerDied)
         {
             anim.SetTrigger("Died");
-            for (int i = 0; i < playerRBS.Length; i++)
-            {
-                playerRBS[i].isKinematic = false;
-            }
+            Die();
+        }
+
+        if (playerMovementScript.actionKey)
+        {
+            healthScript.actionSend = true;
+
+            anim.SetTrigger("ActionPressed"); //On
+            anim.SetTrigger("ActionPressed"); //Off
+
+            playerMovementScript.actionKey = false;
         }
 
         if (playerMovementScript.vectorInput != Vector3.zero)
@@ -46,5 +88,4 @@ public class AnimationController : MonoBehaviour
             anim.SetBool("Moving", false);
         }
     }
-
 }

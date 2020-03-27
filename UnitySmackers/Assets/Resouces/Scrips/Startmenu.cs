@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Startmenu : MonoBehaviour
 {
-    public static bool GameStart = true;
+    public bool inTitleScreen = true;
 
     public GameObject startMenuUI;
 
     public void StartGame()
     {
         startMenuUI.SetActive(false);
-        GameStart = false;
+        inTitleScreen = false;
         Time.timeScale = 1f;
         Debug.Log("button is ingedrukt");
 

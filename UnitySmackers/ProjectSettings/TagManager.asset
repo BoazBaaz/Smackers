@@ -8,6 +8,7 @@ TagManager:
   - Player2
   - BodyCollider
   - CombatCollider
+  - Canvas
   layers:
   - Default
   - TransparentFX

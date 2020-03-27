@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SceneSwitch : MonoBehaviour
+public class UIScript : MonoBehaviour
 {
     public void ExitGame()
     {

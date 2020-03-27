@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public KeyCode left;
-    //public KeyCode right;
-    //public KeyCode forward;
-    //public KeyCode Backward;
-
     public Rigidbody rigidbodyPlayer;
     public float moveSpeed = 20;
 
@@ -34,28 +29,5 @@ public class PlayerMovement : MonoBehaviour
 
             rigidbodyPlayer.MovePosition(newPos);
         }
-    }
-
-    private void Update()
-    {
-        #region Old Code
-        //if (Input.GetKey(left))
-        //{
-        //    transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        //}
-        //if (Input.GetKey(right))
-        //{
-        //    transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-
-        //}
-        //if (Input.GetKey(forward))
-        //{
-        //    transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
-        //}
-        //else if (Input.GetKey(Backward))
-        //{
-        //    transform.position += Vector3.back * moveSpeed * Time.deltaTime;
-        //}
-        #endregion
     }
 }

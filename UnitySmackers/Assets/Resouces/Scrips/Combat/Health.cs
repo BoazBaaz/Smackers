@@ -16,6 +16,14 @@ public class Health : MonoBehaviour
         m_CurrentHealth = m_MaxHealth;
     }
 
+    private void Update()
+    {
+        if (m_CurrentHealth <= 0)
+        {
+            Debug.Log("U dead MATE!!!" + gameObject.name);
+        }
+    }
+
     //Maby Headshots more damage later???
 
     public void GetHit()

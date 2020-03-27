@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
 
     public float m_Damage = 10f;
 
+    public bool playerDied = false;
+
     private void Start()
     {
         m_CurrentHealth = m_MaxHealth;
@@ -20,7 +22,7 @@ public class Health : MonoBehaviour
     {
         if (m_CurrentHealth <= 0)
         {
-            Debug.Log("U dead MATE!!!" + gameObject.name);
+            playerDied = false;
         }
     }
 

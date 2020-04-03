@@ -15,10 +15,6 @@ public class PlayerCore : MonoBehaviour
     protected UIManager UIManagerScript;
 
     [Header("Input")]
-
-    public string HorizontalInput;
-    public string VerticalInput;
-
     public float moveSpeed = 20f;
     public float smoothSpeed = 1f;
 
@@ -42,8 +38,8 @@ public class PlayerCore : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         UIManagerScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIManager>();
 
-        healthScript = new Health();
-        AnimControlScript = new AnimationController();
-        PlayerMovementScript = new PlayerMovement();
+        healthScript = gameObject.GetComponent<Health>();
+        AnimControlScript = gameObject.GetComponent<AnimationController>();
+        PlayerMovementScript = gameObject.GetComponent<PlayerMovement>();
     }
 }

@@ -11,26 +11,26 @@ public class PlayerMovement : PlayerCore
         {
             if (!healthScript.playerDied)
             {
-                //if (gameObject.CompareTag("Player2"))
-                //{
-                //    vectorInput.x = Input.GetAxis("Horizontal2");
-                //    vectorInput.z = Input.GetAxis("Vertical2");
-
-                //    if (Input.GetKeyDown(ActionKey))
-                //    {
-                //        actionKeyBool = true;
-                //    }
-                //}
-                //if (gameObject.CompareTag("Player1"))
-                //{
-                    vectorInput.x = Input.GetAxis(HorizontalInput);
-                    vectorInput.z = Input.GetAxis(VerticalInput);
+                if (gameObject.CompareTag("Player2"))
+                {
+                    vectorInput.x = Input.GetAxis("Horizontal2");
+                    vectorInput.z = Input.GetAxis("Vertical2");
 
                     if (Input.GetKeyDown(ActionKey))
                     {
                         actionKeyBool = true;
                     }
-                //}
+                }
+                if (gameObject.CompareTag("Player1"))
+                {
+                    vectorInput.x = Input.GetAxis("Horizontal1");
+                    vectorInput.z = Input.GetAxis("Vertical1");
+
+                    if (Input.GetKeyDown(ActionKey))
+                    {
+                        actionKeyBool = true;
+                    }
+                }
             }
         }
     }

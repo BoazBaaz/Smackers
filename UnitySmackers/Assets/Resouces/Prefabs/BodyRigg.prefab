@@ -577,6 +577,9 @@ GameObject:
   - component: {fileID: 6164564790043494701}
   - component: {fileID: 4322896292148786912}
   - component: {fileID: 5546297357627728025}
+  - component: {fileID: 6588517104387763924}
+  - component: {fileID: 7407722002353176891}
+  - component: {fileID: 979579408049056702}
   - component: {fileID: 1710673479512698716}
   m_Layer: 0
   m_Name: BodyRigg
@@ -655,14 +658,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3887b4926a7a72941983d4202f286660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthScript: {fileID: 0}
-  AnimControlScript: {fileID: 0}
-  PlayerMovementScript: {fileID: 0}
+  healthScript: {fileID: 6588517104387763924}
+  AnimControlScript: {fileID: 7407722002353176891}
+  PlayerMovementScript: {fileID: 979579408049056702}
   HorizontalInput: Horizontal1
   VerticalInput: Vertical1
   moveSpeed: 20
   smoothSpeed: 1
   ActionKey: 305
+  m_MaxHealth: 100
+  m_CurrentHealth: 0
+  m_Damage: 10
+  playerDied: 0
+--- !u!114 &6588517104387763924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066849266964474294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3732633d04a8a1148a555e0dd1503301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthScript: {fileID: 6588517104387763924}
+  AnimControlScript: {fileID: 7407722002353176891}
+  PlayerMovementScript: {fileID: 979579408049056702}
+  HorizontalInput: Horizontal1
+  VerticalInput: 
+  moveSpeed: 20
+  smoothSpeed: 1
+  ActionKey: 0
+  m_MaxHealth: 100
+  m_CurrentHealth: 0
+  m_Damage: 10
+  playerDied: 0
+--- !u!114 &7407722002353176891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066849266964474294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cb2cc6b91b28f4fa405ebbca79b5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthScript: {fileID: 6588517104387763924}
+  AnimControlScript: {fileID: 7407722002353176891}
+  PlayerMovementScript: {fileID: 979579408049056702}
+  HorizontalInput: 
+  VerticalInput: 
+  moveSpeed: 20
+  smoothSpeed: 1
+  ActionKey: 0
+  m_MaxHealth: 100
+  m_CurrentHealth: 0
+  m_Damage: 10
+  playerDied: 0
+--- !u!114 &979579408049056702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066849266964474294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c2fb72933c007438e3b21a55bdd8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthScript: {fileID: 6588517104387763924}
+  AnimControlScript: {fileID: 7407722002353176891}
+  PlayerMovementScript: {fileID: 979579408049056702}
+  HorizontalInput: 
+  VerticalInput: 
+  moveSpeed: 20
+  smoothSpeed: 1
+  ActionKey: 0
   m_MaxHealth: 100
   m_CurrentHealth: 0
   m_Damage: 10

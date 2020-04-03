@@ -18,10 +18,8 @@ public class AnimationController : PlayerCore
 
     public void Die()
     {
-        animator.enabled = false;
         SetRigidbodyState(false);
         SetColliderState(true);
-        
     }
 
     public void SetRigidbodyState(bool state)

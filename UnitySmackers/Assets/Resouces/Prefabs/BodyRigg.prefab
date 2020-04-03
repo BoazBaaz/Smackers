@@ -152,7 +152,6 @@ GameObject:
   - component: {fileID: 863584924514436319}
   - component: {fileID: 863584924514436318}
   - component: {fileID: 863584924514436313}
-  - component: {fileID: 1204056608582544913}
   m_Layer: 0
   m_Name: joint8
   m_TagString: CombatCollider
@@ -250,23 +249,6 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1204056608582544913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863584924514436312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37031352fb96a9548b01b90595ae4cae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MaxHealth: 100
-  m_CurrentHealth: 0
-  m_Damage: 10
-  playerDied: 0
-  actionSend: 0
 --- !u!1 &895907668140226879
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,9 +576,7 @@ GameObject:
   - component: {fileID: 8291117837936080313}
   - component: {fileID: 6164564790043494701}
   - component: {fileID: 4322896292148786912}
-  - component: {fileID: 1677987742944745756}
-  - component: {fileID: 1525810136551727544}
-  - component: {fileID: 761529798491459490}
+  - component: {fileID: 5546297357627728025}
   - component: {fileID: 1710673479512698716}
   m_Layer: 0
   m_Name: BodyRigg
@@ -663,7 +643,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1677987742944745756
+--- !u!114 &5546297357627728025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -672,44 +652,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4066849266964474294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3732633d04a8a1148a555e0dd1503301, type: 3}
+  m_Script: {fileID: 11500000, guid: 3887b4926a7a72941983d4202f286660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthScript: {fileID: 0}
+  AnimControlScript: {fileID: 0}
+  PlayerMovementScript: {fileID: 0}
+  HorizontalInput: Horizontal1
+  VerticalInput: Vertical1
+  moveSpeed: 20
+  smoothSpeed: 1
+  ActionKey: 305
   m_MaxHealth: 100
   m_CurrentHealth: 0
   m_Damage: 10
   playerDied: 0
-  actionSend: 0
---- !u!114 &1525810136551727544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4066849266964474294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c2fb72933c007438e3b21a55bdd8c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  smoothSpeed: 1
-  vectorInput: {x: 0, y: 0, z: 0}
-  lastMovement: {x: 0, y: 0, z: 0}
-  actionKey: 0
---- !u!114 &761529798491459490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4066849266964474294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57cb2cc6b91b28f4fa405ebbca79b5a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1710673479512698716}
 --- !u!95 &1710673479512698716
 Animator:
   serializedVersion: 3
@@ -1362,7 +1319,6 @@ GameObject:
   - component: {fileID: 8834147784070860954}
   - component: {fileID: 8834147784070860949}
   - component: {fileID: 8834147784070860948}
-  - component: {fileID: 3383012578506859581}
   m_Layer: 0
   m_Name: joint8 1
   m_TagString: CombatCollider
@@ -1460,23 +1416,6 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &3383012578506859581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8834147784070860951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37031352fb96a9548b01b90595ae4cae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MaxHealth: 100
-  m_CurrentHealth: 0
-  m_Damage: 10
-  playerDied: 0
-  actionSend: 0
 --- !u!1 &9006728136757513169
 GameObject:
   m_ObjectHideFlags: 0

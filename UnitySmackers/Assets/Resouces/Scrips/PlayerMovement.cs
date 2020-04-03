@@ -4,58 +4,54 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public KeyCode left;
-    //public KeyCode right;
-    //public KeyCode forward;
-    //public KeyCode Backward;
+    private Startmenu startMenuScript;
 
-    public Rigidbody rigidbodyPlayer;
-    public float moveSpeed = 20;
+    public float moveSpeed = 20f;
+    public float smoothSpeed = 1f;
 
-    private Vector3 vectorInput;
+    public Vector3 vectorInput;
+    public Vector3 lastMovement;
 
-    private void FixedUpdate()
+    public bool actionKey;
+
+
+    private void Start()
     {
-        if (rigidbodyPlayer.CompareTag("Player2"))
-        {
-            vectorInput.x = Input.GetAxis("Horizontal2");
-            vectorInput.z = Input.GetAxis("Vertical2");
-
-            Vector3 newPos = rigidbodyPlayer.position + ((vectorInput * moveSpeed) * Time.fixedDeltaTime);
-
-            rigidbodyPlayer.MovePosition(newPos);
-        }
-        if (rigidbodyPlayer.CompareTag("Player1"))
-        {
-            vectorInput.x = Input.GetAxis("Horizontal1");
-            vectorInput.z = Input.GetAxis("Vertical1");
-
-            Vector3 newPos = rigidbodyPlayer.position + ((vectorInput * moveSpeed) * Time.fixedDeltaTime);
-
-            rigidbodyPlayer.MovePosition(newPos);
-        }
+        startMenuScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Startmenu>();
     }
 
     private void Update()
     {
-        #region Old Code
-        //if (Input.GetKey(left))
-        //{
-        //    transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        //}
-        //if (Input.GetKey(right))
-        //{
-        //    transform.position += Vector3.right * moveSpeed * Time.deltaTime;
 
-        //}
-        //if (Input.GetKey(forward))
-        //{
-        //    transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
-        //}
-        //else if (Input.GetKey(Backward))
-        //{
-        //    transform.position += Vector3.back * moveSpeed * Time.deltaTime;
-        //}
-        #endregion
+        if (!startMenuScript.inTitleScreen)
+        {
+            if (gameObject.CompareTag("Player2"))
+            {
+                vectorInput.x = Input.GetAxis("Horizontal2");
+                vectorInput.z = Input.GetAxis("Vertical2");
+
+                if (Input.GetKeyDown(KeyCode.RightControl))
+                {
+                    actionKey = true;
+                }
+            }
+            if (gameObject.CompareTag("Player1"))
+            {
+                vectorInput.x = Input.GetAxis("Horizontal1");
+                vectorInput.z = Input.GetAxis("Vertical1");
+
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    actionKey = true;
+                }
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lastMovement), smoothSpeed);
+
+        transform.Translate(vectorInput * moveSpeed * Time.deltaTime, Space.World);
     }
 }

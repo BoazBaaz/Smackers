@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationController : PlayerCore
+public class AnimationController : MonoBehaviour
 {
+    public Animator anim;
+
+    protected Health healthScript;
+    protected PlayerMovement playerMovementScript;
 
     private void Start()
     {
+        healthScript = gameObject.GetComponent<Health>();
+        playerMovementScript = gameObject.GetComponent<PlayerMovement>();
+
         SetRigidbodyState(true);
         SetColliderState(false);
     }
@@ -18,7 +25,7 @@ public class AnimationController : PlayerCore
 
     public void Die()
     {
-        animator.enabled = false;
+        anim.enabled = false;
         SetRigidbodyState(false);
         SetColliderState(true);
         
@@ -57,27 +64,29 @@ public class AnimationController : PlayerCore
     {
         if (healthScript.playerDied)
         {
-            animator.SetTrigger("Died");
+            anim.SetTrigger("Died");
             Die();
         }
 
-        if (actionKeyBool)
+        if (playerMovementScript.actionKey)
         {
-            animator.SetTrigger("ActionPressed"); //On
-            animator.SetTrigger("ActionPressed"); //Off
+            healthScript.actionSend = true;
 
-            actionKeyBool = false;
+            anim.SetTrigger("ActionPressed"); //On
+            anim.SetTrigger("ActionPressed"); //Off
+
+            playerMovementScript.actionKey = false;
         }
 
-        if (vectorInput != Vector3.zero)
+        if (playerMovementScript.vectorInput != Vector3.zero)
         {
-            animator.SetBool("Moving", true);
+            anim.SetBool("Moving", true);
 
-            lastMovement = vectorInput;
+            playerMovementScript.lastMovement = playerMovementScript.vectorInput;
         }
         else
         {
-            animator.SetBool("Moving", false);
+            anim.SetBool("Moving", false);
         }
     }
 }

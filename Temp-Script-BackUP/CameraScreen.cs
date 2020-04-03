@@ -9,7 +9,7 @@ public class CameraScreen : MonoBehaviour
     private Camera cam;
 
     public Canvas canves;
-    private UIManager UIManagerScript;
+    private Startmenu startMenu;
 
     public Vector3 camStartPos;
     private Quaternion camStartRoto;
@@ -25,12 +25,12 @@ public class CameraScreen : MonoBehaviour
         camStartRoto = transform.rotation;
 
         cam = gameObject.GetComponent<Camera>();
-        UIManagerScript = canves.GetComponentInChildren<UIManager>();
+        startMenu = canves.GetComponentInChildren<Startmenu>();
     }
 
     private void FixedUpdate()
     {
-        if (!UIManagerScript.inTitleScreen)
+        if (startMenu.inTitleScreen != true)
         {
             transform.position = camStartPos;
             transform.rotation = camStartRoto;

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : PlayerCore
 {
+    public UIManager UIManagerScript;
+
+    private void Start()
+    {
+        UIManagerScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIManager>();
+    }
 
     private void Update()
     {

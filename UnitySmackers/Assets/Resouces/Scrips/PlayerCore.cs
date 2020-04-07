@@ -10,16 +10,12 @@ public class PlayerCore : MonoBehaviour
     public AnimationController AnimControlScript;
     public PlayerMovement PlayerMovementScript;
 
-    //Workaround
-    protected Animator animator;
-    protected UIManager UIManagerScript;
-
     [Header("Input")]
     public float moveSpeed = 20f;
     public float smoothSpeed = 1f;
 
-    protected Vector3 vectorInput;
-    protected Vector3 lastMovement;
+    public Vector3 vectorInput;
+    public Vector3 lastMovement;
 
     public KeyCode ActionKey;
     protected bool actionKeyBool;
@@ -35,9 +31,6 @@ public class PlayerCore : MonoBehaviour
 
     private void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
-        UIManagerScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIManager>();
-
         healthScript = gameObject.GetComponent<Health>();
         AnimControlScript = gameObject.GetComponent<AnimationController>();
         PlayerMovementScript = gameObject.GetComponent<PlayerMovement>();

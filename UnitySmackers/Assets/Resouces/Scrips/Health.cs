@@ -16,8 +16,14 @@ public class Health : PlayerCore
         if (m_CurrentHealth <= 0)
         {
             playerDied = true;
-            AnimControlScript.Die();
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        AnimControlScript.SetRigidbodyState(false);
+        AnimControlScript.SetColliderState(true);
     }
 
     public void GetHit()

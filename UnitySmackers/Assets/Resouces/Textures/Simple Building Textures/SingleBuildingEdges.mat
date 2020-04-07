@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SimpleBuildingEdges
+  m_Name: SingleBuildingEdges
   m_Shader: {fileID: 4800000, guid: e3fbcd342fdb1bc4eb5994f70774e4bd, type: 3}
-  m_ShaderKeywords: FT_EDGE_TESS _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -75,7 +75,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Tess: 4
-    - _TessMode: 1
+    - _TessMode: 0
     - _UVSec: 0
     - _ZWrite: 1
     - _maxDist: 25

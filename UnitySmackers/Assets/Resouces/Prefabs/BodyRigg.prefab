@@ -661,8 +661,6 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  HorizontalInput: Horizontal1
-  VerticalInput: Vertical1
   moveSpeed: 20
   smoothSpeed: 1
   ActionKey: 305
@@ -685,8 +683,6 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  HorizontalInput: Horizontal1
-  VerticalInput: 
   moveSpeed: 20
   smoothSpeed: 1
   ActionKey: 0
@@ -709,8 +705,6 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  HorizontalInput: 
-  VerticalInput: 
   moveSpeed: 20
   smoothSpeed: 1
   ActionKey: 0
@@ -733,8 +727,6 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  HorizontalInput: 
-  VerticalInput: 
   moveSpeed: 20
   smoothSpeed: 1
   ActionKey: 0

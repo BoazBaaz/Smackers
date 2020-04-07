@@ -6,6 +6,16 @@ using UnityEngine;
 
 public class Health : PlayerCore
 {
+
+    [Header("Health")]
+    public float m_MaxHealth = 100f;
+    public float m_CurrentHealth;
+
+    public float m_Damage = 10f;
+
+    public bool playerDied = false;
+
+
     private void Start()
     {
         m_CurrentHealth = m_MaxHealth;
@@ -24,6 +34,7 @@ public class Health : PlayerCore
     {
         AnimControlScript.SetRigidbodyState(false);
         AnimControlScript.SetColliderState(true);
+
     }
 
     public void GetHit()
@@ -35,11 +46,11 @@ public class Health : PlayerCore
     {
         if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
         {
-            if (actionKeyBool)
+            if (PlayerMovementScript.actionKeyBool)
             {
                 Health targetMind = other.gameObject.GetComponentInParent<Health>();
                 targetMind.GetHit();
-                actionKeyBool = false;
+                PlayerMovementScript.actionKeyBool = false;
             }
         }
     }

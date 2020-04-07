@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationController : PlayerCore
 {
-    public Animator animator;
+    private Animator animator;
 
     private void Start()
     {
@@ -49,24 +49,24 @@ public class AnimationController : PlayerCore
 
     private void AnimatorSwitches()
     {
-        if (playerDied)
+        if (healthScript.playerDied)
         {
             animator.SetTrigger("Died");
         }
 
-        if (actionKeyBool)
+        if (PlayerMovementScript.actionKeyBool)
         {
             animator.SetTrigger("ActionPressed"); //On
             animator.SetTrigger("ActionPressed"); //Off
 
-            actionKeyBool = false;
+            PlayerMovementScript.actionKeyBool = false;
         }
 
-        if (vectorInput != Vector3.zero)
+        if (PlayerMovementScript.vectorInput != Vector3.zero)
         {
             animator.SetBool("Moving", true);
 
-            lastMovement = vectorInput;
+            PlayerMovementScript.lastMovement = PlayerMovementScript.vectorInput;
         }
         else
         {

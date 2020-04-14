@@ -51,15 +51,13 @@ public class AnimationController : PlayerCore
     {
         if (healthScript.playerDied)
         {
-            animator.SetTrigger("Died");
+            animator.enabled = false;
         }
 
-        if (PlayerMovementScript.actionKeyBool)
+        if (PlayerMovementScript.actionKeyPressed)
         {
             animator.SetTrigger("ActionPressed"); //On
             animator.SetTrigger("ActionPressed"); //Off
-
-            PlayerMovementScript.actionKeyBool = false;
         }
 
         if (PlayerMovementScript.vectorInput != Vector3.zero)

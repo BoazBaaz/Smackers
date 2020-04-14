@@ -9,6 +9,8 @@ public class CameraScreen : MonoBehaviour
     private Camera cam;
 
     public Canvas canves;
+    public Health player1;
+    public Health player2;
     private UIManager UIManagerScript;
 
     public Vector3 camStartPos;
@@ -32,16 +34,23 @@ public class CameraScreen : MonoBehaviour
     {
         if (!UIManagerScript.inTitleScreen)
         {
-            transform.position = camStartPos;
-            transform.rotation = camStartRoto;
+            if (player1.playerDied || player2.playerDied)
+            {
+                
+            }
+            else
+            {
+                transform.position = camStartPos;
+                transform.rotation = camStartRoto;
 
-            Vector3 midpoint = (pl1.position + pl2.position) / 2f;
+                Vector3 midpoint = (pl1.position + pl2.position) / 2f;
 
-            float distance = (pl1.position - pl2.position).magnitude;
+                float distance = (pl1.position - pl2.position).magnitude;
 
-            Vector3 cameraDestination = midpoint - cam.transform.forward * distance * zoomFactor;
+                Vector3 cameraDestination = midpoint - cam.transform.forward * distance * zoomFactor;
 
-            cam.transform.position = Vector3.Slerp(transform.position, cameraDestination, followTimeDelta);
+                cam.transform.position = Vector3.Slerp(transform.position, cameraDestination, followTimeDelta);
+            }
         }
         else
         {

@@ -58,7 +58,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 3.75
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -198,7 +198,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -404,7 +404,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -513,7 +513,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 979579408049056702}
   - component: {fileID: 1710673479512698716}
   m_Layer: 0
-  m_Name: BodyRigg
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,8 +628,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.055890407, y: 0.01622446, z: 0.012914977}
-  m_Center: {x: -0.00064278365, y: -0.018620297, z: 0.015216176}
+  m_Size: {x: 0.055890407, y: 0.01622446, z: 0.04535232}
+  m_Center: {x: -0.00064278365, y: -0.018620297, z: 0.03143484}
 --- !u!54 &4322896292148786912
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -661,13 +661,6 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  moveSpeed: 20
-  smoothSpeed: 1
-  ActionKey: 305
-  m_MaxHealth: 100
-  m_CurrentHealth: 0
-  m_Damage: 10
-  playerDied: 0
 --- !u!114 &6588517104387763924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,13 +676,13 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  moveSpeed: 20
-  smoothSpeed: 1
-  ActionKey: 0
   m_MaxHealth: 100
   m_CurrentHealth: 0
   m_Damage: 10
   playerDied: 0
+  minForceOnDeath: 300
+  maxForceOnDeath: 400
+  forceX: 0
 --- !u!114 &7407722002353176891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,13 +698,6 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
-  moveSpeed: 20
-  smoothSpeed: 1
-  ActionKey: 0
-  m_MaxHealth: 100
-  m_CurrentHealth: 0
-  m_Damage: 10
-  playerDied: 0
 --- !u!114 &979579408049056702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,13 +713,11 @@ MonoBehaviour:
   healthScript: {fileID: 6588517104387763924}
   AnimControlScript: {fileID: 7407722002353176891}
   PlayerMovementScript: {fileID: 979579408049056702}
+  vectorInput: {x: 0, y: 0, z: 0}
+  lastMovement: {x: 0, y: 0, z: 0}
   moveSpeed: 20
   smoothSpeed: 1
-  ActionKey: 0
-  m_MaxHealth: 100
-  m_CurrentHealth: 0
-  m_Damage: 10
-  playerDied: 0
+  actionKeyPressed: 0
 --- !u!95 &1710673479512698716
 Animator:
   serializedVersion: 3
@@ -810,7 +794,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 6.25
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -874,7 +858,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 3.75
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1013,7 +997,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 3.75
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1124,7 +1108,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 6.25
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1233,7 +1217,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1432,7 +1416,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1541,7 +1525,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 3.75
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

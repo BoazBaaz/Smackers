@@ -13,10 +13,8 @@ public class PlayerMovement : PlayerCore
     public float moveSpeed = 20f;
     public float smoothSpeed = 1f;
 
+    public bool actionKeyPressed = false;
 
-    [Header("Key")]
-    public bool actionKeyBool;
-    public KeyCode ActionKey;
 
     private void Start()
     {
@@ -35,18 +33,22 @@ public class PlayerMovement : PlayerCore
                     vectorInput.x = Input.GetAxis("Horizontal2");
                     vectorInput.z = Input.GetAxis("Vertical2");
 
+                    if (Input.GetKeyDown(KeyCode.RightControl))
+                    {
+                        actionKeyPressed = true;
+                    }
                 }
                 if (gameObject.CompareTag("Player1"))
                 {
                     vectorInput.x = Input.GetAxis("Horizontal1");
                     vectorInput.z = Input.GetAxis("Vertical1");
 
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        actionKeyPressed = true;
+                    }
                 }
 
-                if (Input.GetKeyDown(ActionKey))
-                {
-                    actionKeyBool = true;
-                }
             }
         }
     }

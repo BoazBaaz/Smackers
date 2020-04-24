@@ -74,7 +74,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.417
+    value: 0.465
   smoothness:
     overrideState: 1
     value: 0.893
@@ -1420,34 +1420,34 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 100
+    value: 0.4
   threshold:
-    overrideState: 1
+    overrideState: 0
     value: 3
   softKnee:
-    overrideState: 1
+    overrideState: 0
     value: 0.392
   clamp:
-    overrideState: 1
+    overrideState: 0
     value: 100
   diffusion:
-    overrideState: 1
+    overrideState: 0
     value: 3.14
   anamorphicRatio:
-    overrideState: 1
+    overrideState: 0
     value: 0
   color:
-    overrideState: 1
+    overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
-    overrideState: 1
+    overrideState: 0
     value: 0
   dirtTexture:
-    overrideState: 1
+    overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
-    overrideState: 1
+    overrideState: 0
     value: 0
 --- !u!114 &6308563189605194869
 MonoBehaviour:

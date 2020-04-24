@@ -32,7 +32,7 @@ public class CameraScreen : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!UIManagerScript.inTitleScreen)
+        if (!UIManagerScript.inStartScreen)
         {
             if (player1.playerDied || player2.playerDied)
             {
